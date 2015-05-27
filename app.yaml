@@ -1,0 +1,64 @@
+application: mylorecipes
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /skills/?
+  script: skills.application
+
+- url: /unit2/rot13
+  script: rot13.application
+
+- url: /blog/signup
+  script: signup.application
+
+- url: /blog/login
+  script: login.application
+
+- url: /blog/logout
+  script: login.application
+
+- url: /blog/welcome
+  script: signup.application
+
+- url: /unit2/templates
+  script: templates.application
+
+- url: /unit2/templates/fizzbuzz
+  script: templates.application
+
+- url: /unit3/asciichan
+  script: asciichan.application
+
+- url: /blog/flush/?
+  script: blog.application
+
+- url: /blog/?
+  script: blog.application
+
+- url: /blog/.json
+  script: blog.application
+
+- url: /blog/(\d+)
+  script: blog.application
+
+- url: /blog/_edit/(\d+)
+  script: blog.application
+
+- url: /blog/(\d+)(?:\.json)?
+  script: blog.application
+
+- url: /blog/newpost
+  script: blog.application
+
+- url: /unit4/cookie
+  script: cookie.application
+
+- url: /.*
+  script: helloudacity.application
+
+libraries:
+- name: jinja2
+  version: latest
